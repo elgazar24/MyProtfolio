@@ -64,7 +64,7 @@ app.get('/image1.jpg', (req, res) => {
 });
 
 
-app.get('/myphoto.jpg', (req, res) => {
+app.get('/myphoto.png', (req, res) => {
   res.sendFile(__dirname + '/assets/Photos/myphoto.png');
   console.log(`Server got "myphoto.jpg" request}`);
 
