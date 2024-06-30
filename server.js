@@ -31,8 +31,8 @@
 
 const express = require('express');
 const app = express();
-const port = 3000;
-
+const port = 80;
+let user = 0 ;
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
@@ -40,6 +40,10 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/website/home/index.html');
     console.log(`Server got "/" request}`);
+
+user = user + 1 ;
+
+    console.log(`Server USERS ${user}`);
 
 });
 
@@ -75,4 +79,8 @@ app.get('/myphoto.png', (req, res) => {
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server USERS ${user}`);
+
+
 });
+
