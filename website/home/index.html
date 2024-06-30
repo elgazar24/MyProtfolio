@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dynamic Project Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+<!-- 
+    <header id="dynamic-header" class="parallax">
+        <div class="header-content">
+            <h1 id="header-title">Welcome to My Portfolio</h1>
+            <p id="header-subtitle">Transforming ideas into digital realities</p>
+        </div>
+    </header> -->
+    
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="image1.jpg" alt="Image 1">
+                <div class="caption">
+                    <h2>Heading 1</h2>
+                    <p>Description for image 1.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Image 2">
+                <div class="caption">
+                    <h2>Heading 2</h2>
+                    <p>Description for image 2.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Image 3">
+                <div class="caption">
+                    <h2>Heading 3</h2>
+                    <p>Description for image 3.</p>
+                </div>
+            </div>
+        </div>
+        <div class="dots">
+            <!-- Dots will be dynamically added here -->
+        </div>
+    </div>
+
+    <main>
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project">
+                        <img src="myphoto.png" alt="Project 1">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1</p>
+                        <div class="skills">
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                            <span class="skill">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="myphoto.png" alt="Project 2">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2</p>
+                        <div class="skills">
+                            <span class="skill">React</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="myphoto.png" alt="Project 3">
+                        <h3>Project 3</h3>
+                        <p>Description of Project 3</p>
+                        <div class="skills">
+                            <span class="skill">Vue.js</span>
+                            <span class="skill">Firebase</span>
+                            <span class="skill">Sass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="parallax">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <img src="myphoto.png" alt="Mohamed Elgazar" class="profile-pic">
+                    <div class="about-text">
+                        <p>I'm a passionate developer with a keen interest in creating intuitive and efficient web solutions. With a background in [Your Background], I bring a unique perspective to every project I undertake.</p>
+                        <p>My skills include:</p>
+                    
+                        <ul class="skills-list">
+                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>React, Vue.js, Angular</li>
+                            <li>Node.js, Express, MongoDB</li>
+                            <li>Git, Webpack, Docker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-content">
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p><i class="fas fa-envelope"></i> melgazar725@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +20 1010815084</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mansoura, Egypt</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <p>&copy; 2024 Mohamed Elgazar. All rights reserved.</p>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://github.com/elgazar24" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/melgazar24/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/elgazarr_" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
