@@ -38,13 +38,13 @@ app.use(express.static('public'));
 
 // Example route to send HTML file
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'website/home/index.html');
+    res.sendFile(__dirname + '/website/home/index.html');
     console.log(`Server got "/" request}`);
 
 });
 
 app.get('/script.js', (req, res) => {
-  res.sendFile(__dirname + 'website/home/script.js');
+  res.sendFile(__dirname + '/website/home/script.js');
   console.log(`Server got "/script.js" request}`);
 
 });
@@ -52,20 +52,20 @@ app.get('/script.js', (req, res) => {
 
 
 app.get('/styles.css', (req, res) => {
-  res.sendFile(__dirname + 'website/home/styles.css');
+  res.sendFile(__dirname + '/website/home/styles.css');
   console.log(`Server got "styles.css" request}`);
 
 });
 
 app.get('/image1.jpg', (req, res) => {
-  res.sendFile(__dirname + 'assets/Photos/image1.jpg');
+  res.sendFile(__dirname + '/assets/Photos/image1.jpg');
   console.log(`Server got "image1.jpg" request}`);
 
 });
 
 
 app.get('/myphoto.jpg', (req, res) => {
-  res.sendFile(__dirname + 'assets/Photos/myphoto.jpg');
+  res.sendFile(__dirname + '/assets/Photos/myphoto.jpg');
   console.log(`Server got "myphoto.jpg" request}`);
 
 });
