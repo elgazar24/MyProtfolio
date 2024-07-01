@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const headerBackgrounds = [
-        'https://source.unsplash.com/random/1600x900/?technology',
-        'https://source.unsplash.com/random/1600x900/?programming',
-        'https://source.unsplash.com/random/1600x900/?webdesign',
-        'https://source.unsplash.com/random/1600x900/?developer'
+        'https://source.unsplash.com/random/1600x900/?minimalist',
+        'https://source.unsplash.com/random/1600x900/?black-and-white',
+        'https://source.unsplash.com/random/1600x900/?elegant',
+        'https://source.unsplash.com/random/1600x900/?monochrome'
     ];
 
     const headerTitles = {
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }, 500);
     }
 
-
     // Smooth scrolling for navigation
     document.querySelectorAll('.nav-link').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -61,22 +60,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    // Add animation to projects on scroll
-    const projects = document.querySelectorAll('.project');
+    // Add animation to elements on scroll
+    const animatedElements = document.querySelectorAll('.project, .about-content, .contact-content');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
     }, { threshold: 0.1 });
 
-    projects.forEach(project => {
-        project.style.opacity = 0;
-        project.style.transform = 'translateY(20px)';
-        project.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(project);
+    animatedElements.forEach(element => {
+        observer.observe(element);
     });
 
     // Form submission handling
@@ -89,11 +84,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Update header on page load
     updateHeader('home');
 
-    // Update header on scroll
+    // Update header and nav on scroll
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
+        const nav = document.querySelector('nav');
         const sections = document.querySelectorAll('section');
         let currentSection = 'home';
+
+        if (scrollPosition > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
@@ -107,75 +109,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
         updateHeader(currentSection);
     });
 });
-
-
-/* New styles */ 
-let currentIndex = 0;
-
-function showSlide(index) {
-    
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    // Circular slide logic
-    if (index >= slides.length) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = slides.length - 1;
-    } else {
-        currentIndex = index;
-    }
-    
-    const offset = -currentIndex * 100;
-    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentIndex].classList.add('active');
-    
-    // Reset and apply the animation for captions
-    slides.forEach(slide => {
-        const caption = slide.querySelector('.caption');
-        const h2 = caption.querySelector('h2');
-        const p = caption.querySelector('p');
-
-        caption.style.animation = 'none';
-        h2.style.animation = 'none';
-        p.style.animation = 'none';
-
-        caption.offsetHeight; // Trigger reflow
-        h2.offsetHeight; // Trigger reflow
-        p.offsetHeight; // Trigger reflow
-
-        caption.style.animation = null;
-        h2.style.animation = 'slideInLeft 1s forwards';
-        h2.style.animationDelay = '0.5s';
-        p.style.animation = 'slideInLeft 1s forwards';
-        p.style.animationDelay = '1s';
-    });
-}
-
-function moveSlide(step) {
-    showSlide(currentIndex + step);
-}
-
-function setSlide(index) {
-    showSlide(index);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const dotsContainer = document.querySelector('.dots');
-    
-    slides.forEach((slide, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        dot.addEventListener('click', () => setSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-
-    showSlide(currentIndex);
-});
-
-// Auto slide
-setInterval(() => {
-    moveSlide(1);
-}, 7000);
