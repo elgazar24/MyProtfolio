@@ -68,10 +68,37 @@ header::before {
     margin: 0 auto;
 }
 
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    color: #fff;
+    padding-left: 10px;
+}
+
+.logo_img {
+    height: 50px;
+    width: 50px;
+    /* set image shape to cirucle */
+    border-radius: 50%;
+}
+.logo_name {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 10px;
+    font: "Poppins", sans-serif;
+    color: #fff;
+    /* remove under line */
+    text-decoration: none;
+}
+
 nav {
     background: rgba(44, 62, 80, 0.9);
     padding: 1rem;
     position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     top: 0;
     z-index: 100;
 }
@@ -79,7 +106,9 @@ nav {
 nav ul {
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: start;
+    
 }
 
 nav ul li {
