@@ -86,9 +86,9 @@ header::before {
 nav {
     background: var(--primary-color);
     padding: 1rem;
-    position: fixed;
     width: 100%;
     display: flex;
+    position: sticky;
     justify-content: space-between;
     align-items: center;
     top: 0;
@@ -96,9 +96,9 @@ nav {
     transition: background 0.3s ease;
 }
 
-nav.scrolled {
+/* nav.scrolled {
     background: rgba(0, 0, 0, 0.9);
-}
+} */
 
 .info {
     display: flex;
@@ -109,7 +109,7 @@ nav.scrolled {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 .logo_name {
@@ -118,6 +118,8 @@ nav.scrolled {
     color: var(--secondary-color);
     text-decoration: none;
     font-family: 'Playfair Display', serif;
+    transition: color 0.3s ease;
+padding-left: 10px;
 }
 
 nav ul {
@@ -220,12 +222,16 @@ nav ul li a:hover {
 #about .container {
     background: rgba(0, 0, 0, 0.7);
     padding: 40px;
+    align-items: center;
     border-radius: 8px;
+    display: grid;
+    grid-template-rows: 1fr ;
 }
 
 .about-content {
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr 1fr ;
     gap: 40px;
     opacity: 0;
     transform: translateY(20px);
@@ -307,7 +313,8 @@ footer {
 }
 
 .footer-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
