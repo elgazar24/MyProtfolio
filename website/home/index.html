@@ -11,16 +11,23 @@
 
 <body>
     <nav>
-        <div class="info">
-            <a href="#"><img src="logo.png" alt="Logo" class="logo_img"></a>
-            <a href="#" class="logo_name">Mohamed Elgazar</a>
-        </div>
-        <ul>
+        <div class="nav-container">
+            <div class="info">
+                <a href="#"><img src="logo.png" alt="Logo" class="logo_img"></a>
+                <a href="#" class="logo_name">Mohamed Elgazar</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        <ul class="nav-menu">
             <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
             <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
             <li><a href="#about" class="nav-link" data-section="about">About</a></li>
             <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
         </ul>
+    </div>
     </nav>
 
     <header id="dynamic-header" class="parallax">

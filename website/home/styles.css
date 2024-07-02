@@ -90,18 +90,16 @@ nav {
     display: flex;
     position: sticky;
     justify-content: space-between;
-    align-items: center;
     top: 0;
     z-index: 100;
     transition: background 0.3s ease;
 }
 
-/* nav.scrolled {
-    background: rgba(0, 0, 0, 0.9);
-} */
 
-.info {
+.nav-container {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -126,6 +124,46 @@ nav ul {
     list-style-type: none;
     display: flex;
     align-items: center;
+}
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--secondary-color);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
 }
 
 nav ul li {
