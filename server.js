@@ -53,9 +53,9 @@ app.get('/logo.png', (req, res) => {
 // Route to serve the CV file
 app.get('/MohamedElgazarCV.pdf', (req, res) => {
 
-    const file = path.join(__dirname, 'public', 'MohamedElgazarCV.pdf');
+    const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV.pdf');
 
-    res.download(file, 'YourName_CV.pdf', (err) => {
+    res.download(file, 'MohamedElgazarCV.pdf', (err) => {
         if (err) {
             console.error('Error downloading the file:', err);
         }
