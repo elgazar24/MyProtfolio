@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const https = require('https');
 const fs = require('fs');
@@ -23,7 +21,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/website/home/index.html'));
     console.log(`Server got "/" request`);
 
-    user = user + 1;
+    user += 1;
     console.log(`Server USERS ${user}`);
 });
 
@@ -50,6 +48,20 @@ app.get('/myphoto.png', (req, res) => {
 app.get('/logo.png', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/logo.png'));
     console.log(`Server got "/logo.png" request`);
+});
+
+// Route to serve the CV file
+app.get('/MohamedElgazarCV.pdf', (req, res) => {
+
+    const file = path.join(__dirname, 'public', 'MohamedElgazarCV.pdf');
+
+    res.download(file, 'YourName_CV.pdf', (err) => {
+        if (err) {
+            console.error('Error downloading the file:', err);
+        }
+    });
+
+    console.log(`Server got "/MohamedElgazarCV.pdf" request`);
 });
 
 // Create HTTPS server

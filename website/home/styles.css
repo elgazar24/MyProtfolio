@@ -294,6 +294,21 @@ nav ul li a:hover {
     border: 5px solid var(--secondary-color);
 }
 
+#about li {
+  margin-left: 20px;
+}
+@media (max-width: 768px) {
+
+.profile-pic {
+    width:  200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+}
+
+}
+
 .about-text {
     flex: 1;
 }
@@ -443,4 +458,35 @@ footer {
     nav ul li {
         margin: 10px 0;
     }
+}
+
+
+.download-cv {
+    margin-right: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .download-cv {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+
+.download-cv button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.download-cv button:hover {
+    background-color: #45a049;
 }
