@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Pipe Explorer Robot",
+      "sub-title": "Graduate Project",
+      "description": "",
+      "image": "project1-image.jpg",
+      "skills": ["Raspberry pi 3", "C",  "C++", "python" , "Backend Development" , "Embedded Development" , "Robotics" ]
+    },
+    {
+      "title": "AVR (ATmega32) Drivers ",
+      "sub-title":"",
+      "description": "Description of Project 2",
+      "image": "path/to/project2-image.jpg",
+      "skills": ["C", "C++", "Embedded C" ,"Embedded C++" ,"Microcontrollers" ,"Hardware" , "Embedded Development" , "AVR" ]
+    },
+    {
+        "title": "Mobile App ( Mersal ) ",
+        "sub-title": "",
+        "description": "Description of Project 2",
+        "image": "path/to/project2-image.jpg",
+        "skills": ["Flutter", "Firebase", "SQLite" ,"REST API" ,"Dart" , "Mobile Development" , "Android" , "iOS" ]
+      }
+  ]

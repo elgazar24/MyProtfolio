@@ -51,9 +51,9 @@ app.get('/logo.png', (req, res) => {
 });
 
 // Route to serve the CV file
-app.get('/MohamedElgazarCV.pdf', (req, res) => {
+app.get('/MohamedElgazarCV_Instructor.pdf', (req, res) => {
 
-    const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV.pdf');
+    const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_Instructor.pdf');
 
     res.download(file, 'MohamedElgazarCV.pdf', (err) => {
         if (err) {
@@ -61,7 +61,37 @@ app.get('/MohamedElgazarCV.pdf', (req, res) => {
         }
     });
 
-    console.log(`Server got "/MohamedElgazarCV.pdf" request`);
+    console.log(`Server got "/MohamedElgazarCV_Instructor.pdf" request`);
+});
+
+
+// Route to serve the CV file
+app.get('/MohamedElgazarCV_Flutter.pdf', (req, res) => {
+
+  const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_Flutter.pdf');
+
+  res.download(file, 'MohamedElgazarCV.pdf', (err) => {
+      if (err) {
+          console.error('Error downloading the file:', err);
+      }
+  });
+
+  console.log(`Server got "/MohamedElgazarCV_Flutter.pdf" request`);
+});
+
+
+// Route to serve the CV file
+app.get('/MohamedElgazarCV_EmbeddedSystems.pdf', (req, res) => {
+
+  const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_EmbeddedSystems.pdf');
+
+  res.download(file, 'MohamedElgazarCV_EmbeddedSystems.pdf', (err) => {
+      if (err) {
+          console.error('Error downloading the file:', err);
+      }
+  });
+
+  console.log(`Server got "/MohamedElgazarCV.pdf_EmbeddedSystems" request`);
 });
 
 // Create HTTPS server
