@@ -102,3 +102,11 @@ httpsServer.listen(port, () => {
     console.log(`HTTPS Server is running on https://localhost:${port}`);
     console.log(`Server USERS ${user}`);
 });
+
+app.get('/abdogalal', (req, res) => {
+  res.sendFile(path.join(__dirname, '/abdogalal/index.html'));
+  console.log(`Server got "/" request`);
+
+  user += 1;
+  console.log(`Server USERS ${user}`);
+});
