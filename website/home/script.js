@@ -94,17 +94,18 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
     const formData = new FormData(this); // Create a FormData object from the form
 
-    let formDataString = '';
+    let formDataJSON = {};
     for (const [key, value] of formData.entries()) {
-        formDataString += `${key}: ${value}\n`;
+        formDataJSON[key] = value;
     }
     
-    alert(formDataString);
+    // Now formDataJSON contains the form data as a JSON object
+    console.log(formDataJSON); // Display the JSON object in the console
 
 
     fetch('/submit-form', {
         method: 'POST',
-        body: formData,
+        body: formDataJSON,
     })
     .then(response => response.text())
     .then(data => {
