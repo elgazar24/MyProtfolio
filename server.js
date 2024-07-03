@@ -1,3 +1,9 @@
+// server.js
+
+/************************************************************************/
+/************************** START SERVER SETUP ***************************/
+
+// Load required modules
 const express = require('express');
 const https = require('https');
 const fs = require('fs');
@@ -5,12 +11,15 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const app = express();
-const port = 443; // Default port for HTTPS
+const port = 443; 
+
+
 
 
 let user = 0;
 
-// Read SSL certificate and key files
+
+
 const privateKey = fs.readFileSync('server.key', 'utf8');
 const certificate = fs.readFileSync('server.cert', 'utf8');
 
@@ -26,7 +35,15 @@ const credentials = { key: privateKey, cert: certificate };
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
-// Example route to send HTML file
+
+/************************** END SERVER SETUP ***************************/
+
+
+
+
+/************************************************************************/
+/************************** START HTML ROUTES ***************************/ 
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/website/home/index.html'));
     console.log(`Server got "/" request`);
@@ -35,15 +52,94 @@ app.get('/', (req, res) => {
     console.log(`Server USERS ${user}`);
 });
 
-app.get('/script.js', (req, res) => {
-    res.sendFile(path.join(__dirname, '/website/home/script.js'));
-    console.log(`Server got "/script.js" request`);
-});
+
+/************************** END HTML ROUTES   **************************/
+
+
+/***********************************************************************/
+/************************** START CSS ROUTES ***************************/ 
 
 app.get('/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, '/website/home/styles.css'));
     console.log(`Server got "/styles.css" request`);
 });
+
+/************************** END CSS ROUTES   ***************************/
+
+
+
+
+
+/***********************************************************************/
+/************************** START SCRIPT ROUTES ************************/ 
+
+app.get('/script.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '/website/home/script.js'));
+    console.log(`Server got "/script.js" request`);
+});
+
+/************************** END SCRIPT ROUTES   ************************/
+
+
+
+
+/***********************************************************************/
+/************************** START DOWNLOAD ROUTES **********************/ 
+
+
+
+// Route to serve the CV file for Instructor
+app.get('/MohamedElgazarCV_Instructor.pdf', (req, res) => {
+
+    const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_Instructor.pdf');
+
+    res.download(file, 'MohamedElgazarCV.pdf', (err) => {
+        if (err) {
+            console.error('Error downloading the file:', err);
+        }
+    });
+
+    console.log(`Server got "/MohamedElgazarCV_Instructor.pdf" request`);
+});
+
+
+// Route to serve the CV file for Flutter
+app.get('/MohamedElgazarCV_Flutter.pdf', (req, res) => {
+
+  const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_Flutter.pdf');
+
+  res.download(file, 'MohamedElgazarCV.pdf', (err) => {
+      if (err) {
+          console.error('Error downloading the file:', err);
+      }
+  });
+
+  console.log(`Server got "/MohamedElgazarCV_Flutter.pdf" request`);
+});
+
+
+// Route to serve the CV file for Embedded Systems
+app.get('/MohamedElgazarCV_EmbeddedSystems.pdf', (req, res) => {
+
+  const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_EmbeddedSystems.pdf');
+
+  res.download(file, 'MohamedElgazarCV_EmbeddedSystems.pdf', (err) => {
+      if (err) {
+          console.error('Error downloading the file:', err);
+      }
+  });
+
+  console.log(`Server got "/MohamedElgazarCV.pdf_EmbeddedSystems" request`);
+});
+
+
+
+/************************** END DOWNLOAD ROUTES   **********************/
+
+
+
+/***********************************************************************/
+/************************** IMAGES REQUEST *****************************/
 
 app.get('/image1.jpg', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/image1.jpg'));
@@ -65,78 +161,54 @@ app.get('/header.JPG', (req, res) => {
   console.log(`Server got "header.JPG" request`);
 });
 
-// Route to serve the CV file
-app.get('/MohamedElgazarCV_Instructor.pdf', (req, res) => {
 
-    const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_Instructor.pdf');
-
-    res.download(file, 'MohamedElgazarCV.pdf', (err) => {
-        if (err) {
-            console.error('Error downloading the file:', err);
-        }
-    });
-
-    console.log(`Server got "/MohamedElgazarCV_Instructor.pdf" request`);
-});
+/************************** END IMAGES REQUEST ******************* *****/
 
 
-// Route to serve the CV file
-app.get('/MohamedElgazarCV_Flutter.pdf', (req, res) => {
 
-  const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_Flutter.pdf');
-
-  res.download(file, 'MohamedElgazarCV.pdf', (err) => {
-      if (err) {
-          console.error('Error downloading the file:', err);
-      }
-  });
-
-  console.log(`Server got "/MohamedElgazarCV_Flutter.pdf" request`);
-});
+/***********************************************************************/
+/************************** POST REQUEST *******************************/ 
 
 
-// Route to serve the CV file
-app.get('/MohamedElgazarCV_EmbeddedSystems.pdf', (req, res) => {
-
-  const file = path.join(__dirname, 'assets/cv/MohamedElgazarCV_EmbeddedSystems.pdf');
-
-  res.download(file, 'MohamedElgazarCV_EmbeddedSystems.pdf', (err) => {
-      if (err) {
-          console.error('Error downloading the file:', err);
-      }
-  });
-
-  console.log(`Server got "/MohamedElgazarCV.pdf_EmbeddedSystems" request`);
-});
 
 // Handle form submission
 app.post('/submit-form', (req, res) => {
 
-  console.log(`Server got "/submit-form" request`);
-
-  const { name, email, message } = req.body;
-
-  console.log(req.body);
+    console.log(`Server got "/submit-form" request`);
   
-  const timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
-
-  console.log(`Server Recieved data: Name: ${name}, Email: ${email} ,Message: ${message}, Timestamp: ${timestamp}`);
-
-  // Save data to a file
-  const data = `Name: ${name}, Email: ${email}, Message: ${message}, Timestamp: ${timestamp}\n`;
+    const { name, email, message } = req.body;
   
-  fs.appendFile('messeges.txt', data, (err) => {
-      if (err) {
-          console.error('Error writing to file', err);
-          res.status(500).send('Server error');
-          return;
-      }
+    console.log(req.body);
+    
+    const timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
+  
+    console.log(`Server Recieved data: Name: ${name}, Email: ${email} ,Message: ${message}, Timestamp: ${timestamp}`);
+  
+    // Save data to a file
+    const data = `Name: ${name}, Email: ${email}, Message: ${message}, Timestamp: ${timestamp}\n`;
+    
+    fs.appendFile('messeges.txt', data, (err) => {
+        if (err) {
+            console.error('Error writing to file', err);
+            res.status(500).send('Server error');
+            return;
+        }
+    });
+  
+    console.log(`Server Saved data: Name: ${name}, Email: ${email} ,Message: ${message}, Timestamp: ${timestamp}`);
+  
+    res.send('Form data submitted successfully!');
   });
 
-  console.log(`Server Saved data: Name: ${name}, Email: ${email} ,Message: ${message}, Timestamp: ${timestamp}`);
+  
+/************************** END POST REQUEST ***************************/
 
-  res.send('Form data submitted successfully!');
-});
+
+
+
+
+/*********************************************************************/
+/************************** START HTTPS SERVER ***********************/
 
 
 // Create HTTPS server
@@ -147,3 +219,8 @@ httpsServer.listen(port, () => {
     console.log(`HTTPS Server is running on https://localhost:${port}`);
     console.log(`Server USERS ${user}`);
 });
+
+
+/************************** END HTTPS SERVER   ***********************/
+
+

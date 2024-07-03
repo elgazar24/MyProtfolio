@@ -1,0 +1,64 @@
+
+#about {
+    background-image: url('https://source.unsplash.com/random/1600x900/?minimalist');
+    color: var(--secondary-color);
+    padding: 100px 0;
+}
+
+#about .container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    align-items: center;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: 1fr ;
+}
+
+.about-content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr ;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+}
+
+#about li {
+  margin-left: 20px;
+}
+@media (max-width: 768px) {
+
+.profile-pic {
+    width:  200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+}
+
+}
+
+.about-text {
+    flex: 1;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.skills-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
