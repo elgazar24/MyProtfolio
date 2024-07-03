@@ -124,6 +124,7 @@ app.post('/submit-form', (req, res) => {
 
   // Save data to a file
   const data = `Name: ${name}, Email: ${email}, Message: ${message}, Timestamp: ${timestamp}\n`;
+  
   fs.appendFile('messeges.txt', data, (err) => {
       if (err) {
           console.error('Error writing to file', err);

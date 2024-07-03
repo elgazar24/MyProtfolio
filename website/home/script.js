@@ -93,6 +93,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent the default form submission
 
     const formData = new FormData(this); // Create a FormData object from the form
+    
+    console.log('form data : '); // Check the form data in the console
+    console.log(formData); // Check the form data in the console
 
     fetch('/submit-form', {
         method: 'POST',
