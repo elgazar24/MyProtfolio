@@ -94,7 +94,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
     const formData = new FormData(this); // Create a FormData object from the form
 
-    alert(formData);
+    alert(formData.getAll.toString());
 
 
     fetch('/submit-form', {
