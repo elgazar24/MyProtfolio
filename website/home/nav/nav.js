@@ -18,5 +18,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
     }));
+    
 
 });

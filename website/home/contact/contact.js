@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             email: document.getElementById('email').value,
             message: document.getElementById('message').value,
         };
-        alert('Thank you for your message! I will get back to you soon.'); // Display an alert message
 
 
         fetch('/submit-form', {
@@ -31,4 +30,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
         .catch(error => console.error('Error:', error));
     });
+    
 });
