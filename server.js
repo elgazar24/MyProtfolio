@@ -191,12 +191,12 @@ app.get('/MohamedElgazarCV_EmbeddedSystems.pdf', (req, res) => {
 /***********************************************************************/
 /************************** IMAGES REQUEST *****************************/
 
-app.get('/../../assets/Photos/image1.jpg', (req, res) => {
+app.get('/assets/Photos/image1.jpg', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/image1.jpg'));
     console.log(`Server got "/image1.jpg" request`);
 });
 
-app.get('/../../assets/Photos/myphoto.png', (req, res) => {
+app.get('/assets/Photos/myphoto.png', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/myphoto.png'));
     console.log(`Server got "/myphoto.png" request`);
 });
@@ -206,9 +206,9 @@ app.get('/assets/Photos/logo.png', (req, res) => {
     console.log(`Server got "/logo.png" request`);
 });
 
-app.get('/../../assets/Photos/header.jpg', (req, res) => {
-  res.sendFile(path.join(__dirname, '/assets/Photos/header.JPG'));
-  console.log(`Server got "header.JPG" request`);
+app.get('/assets/Photos/header.jpg', (req, res) => {
+  res.sendFile(path.join(__dirname, '/assets/Photos/header.jpg'));
+  console.log(`Server got "header.jpg" request`);
 });
 
 
