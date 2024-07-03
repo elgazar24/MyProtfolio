@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const headerBackgrounds = [
-        'https://source.unsplash.com/random/1600x900/?minimalist',
-        'https://source.unsplash.com/random/1600x900/?black-and-white',
-        'https://source.unsplash.com/random/1600x900/?elegant',
-        'https://source.unsplash.com/random/1600x900/?monochrome'
+        'header.JPG',
+        'header.JPG',
+        'header.JPG',
+        'header.JPG'
     ];
 
     const headerTitles = {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function changeHeaderBackground() {
         const header = document.getElementById('dynamic-header');
-        header.style.backgroundImage = `url('${headerBackgrounds[currentBackgroundIndex]}')`;
+        header.style.backgroundImage = headerBackgrounds[currentBackgroundIndex];
         currentBackgroundIndex = (currentBackgroundIndex + 1) % headerBackgrounds.length;
     }
 
