@@ -92,20 +92,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent the default form submission
 
-    const formData = new FormData(this); // Create a FormData object from the form
+    const formData = new FormData(document.getElementById('contact-form'));
 
+    // Convert FormData to JSON object
     let formDataJSON = {};
-    for (const [key, value] of formData.entries()) {
+    formData.forEach((value, key) => {
         formDataJSON[key] = value;
-    }
+    });
     
-    // Now formDataJSON contains the form data as a JSON object
-    console.log(formDataJSON); // Display the JSON object in the console
-
+    // Convert JSON object to JSON string
+    const formDataJSONString = JSON.stringify(formDataJSON);
 
     fetch('/submit-form', {
         method: 'POST',
-        body: formDataJSON,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: formDataJSONString,
     })
     .then(response => response.text())
     .then(data => {
