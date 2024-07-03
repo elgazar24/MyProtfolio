@@ -64,27 +64,27 @@ app.get('/styles.css', (req, res) => {
     console.log(`Server got "/styles.css" request`);
 });
 
-app.get('nav/nav.css' , (req , res) => {
+app.get('/nav/nav.css' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/nav/nav.css'));
     console.log(`Server got "/styles.css" request`);
 })
-app.get('footer/footer.css' , (req , res) => {
+app.get('/footer/footer.css' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/footer/footer.css'));
     console.log(`Server got "/styles.css" request`);
 })
-app.get('header/header.css' , (req , res) => {
+app.get('/header/header.css' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/header/header.css'));
     console.log(`Server got "/styles.css" request`);
 })
-app.get('about/about.css' , (req , res) => {
+app.get('/about/about.css' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/about/about.css'));
     console.log(`Server got "/styles.css" request`);
 })
-app.get('projects/projects.css' , (req , res) => {
+app.get('/projects/projects.css' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/projects/projects.css'));
     console.log(`Server got "/styles.css" request`);
 })
-app.get('contact/contact.css' , (req , res) => {
+app.get('/contact/contact.css' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/contact/contact.css'));
     console.log(`Server got "/styles.css" request`);
 })
@@ -103,27 +103,27 @@ app.get('/script.js', (req, res) => {
     console.log(`Server got "/script.js" request`);
 });
 
-app.get('nav/nav.js' , (req , res) => {
+app.get('/nav/nav.js' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/nav/nav.js'));
     console.log(`Server got "/nav.js" request`);
 })
-app.get('footer/footer.js' , (req , res) => {
+app.get('/footer/footer.js' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/footer/footer.js'));
     console.log(`Server got "/footer.js" request`);
 })
-app.get('header/header.js' , (req , res) => {
+app.get('/header/header.js' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/header/header.js'));
     console.log(`Server got "/header.js" request`);
 })
-app.get('about/about.js' , (req , res) => {
+app.get('/about/about.js' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/about/about.js'));
     console.log(`Server got "/about.js" request`);
 })
-app.get('projects/projects.js' , (req , res) => {
+app.get('/projects/projects.js' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/projects/projects.js'));
     console.log(`Server got "/projects.js" request`);
 })
-app.get('contact/contact.js' , (req , res) => {
+app.get('/contact/contact.js' , (req , res) => {
     res.sendFile(path.join(__dirname, '/website/home/contact/contact.js'));
     console.log(`Server got "/contact.js" request`);
 })
@@ -191,22 +191,22 @@ app.get('/MohamedElgazarCV_EmbeddedSystems.pdf', (req, res) => {
 /***********************************************************************/
 /************************** IMAGES REQUEST *****************************/
 
-app.get('../../assets/Photos/image1.jpg', (req, res) => {
+app.get('/../../assets/Photos/image1.jpg', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/image1.jpg'));
     console.log(`Server got "/image1.jpg" request`);
 });
 
-app.get('../../assets/Photos/myphoto.png', (req, res) => {
+app.get('/../../assets/Photos/myphoto.png', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/myphoto.png'));
     console.log(`Server got "/myphoto.png" request`);
 });
 
-app.get('../../assets/Photos/logo.png', (req, res) => {
+app.get('/../../assets/Photos/logo.png', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/logo.png'));
     console.log(`Server got "/logo.png" request`);
 });
 
-app.get('../../assets/Photos/header.jpg', (req, res) => {
+app.get('/../../assets/Photos/header.jpg', (req, res) => {
   res.sendFile(path.join(__dirname, '/assets/Photos/header.JPG'));
   console.log(`Server got "header.JPG" request`);
 });
