@@ -115,6 +115,8 @@ app.post('/submit-form', (req, res) => {
   console.log(`Server got "/submit-form" request`);
 
   const { name, email, message } = req.body;
+
+  console.log(req.body);
   
   const timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
 
