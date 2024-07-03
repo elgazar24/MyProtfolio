@@ -227,17 +227,14 @@ app.post('/submit-form', (req, res) => {
     console.log(`Server got "/submit-form" request`);
   
     const { name, email, message } = req.body;
-  
-    console.log(req.body);
-    
+      
     const timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
   
-    console.log(`Server Recieved data: Name: ${name}, Email: ${email} ,Message: ${message}, Timestamp: ${timestamp}`);
   
     // Save data to a file
     const data = `Name: ${name}, Email: ${email}, Message: ${message}, Timestamp: ${timestamp}\n`;
     
-    fs.appendFile('messeges.txt', data, (err) => {
+    fs.appendFile('db/messeges.txt', data, (err) => {
         if (err) {
             console.error('Error writing to file', err);
             res.status(500).send('Server error');
