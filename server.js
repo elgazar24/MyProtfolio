@@ -18,6 +18,7 @@ const certificate = fs.readFileSync('server.cert', 'utf8');
 // Set up body parser to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.json());
 
 
 const credentials = { key: privateKey, cert: certificate };
