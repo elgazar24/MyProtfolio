@@ -88,12 +88,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
         observer.observe(element);
     });
 
-    // Form submission handling
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
+   // Form submission handling
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this); // Create a FormData object from the form
+
+    fetch('/submit-form', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert('Thank you for your message! I will get back to you soon.'); // Display an alert message
+        this.reset(); // Reset the form fields
+    })
+    .catch(error => console.error('Error:', error));
+});
 
     // Update header on page load
     updateHeader('home');
