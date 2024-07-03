@@ -201,7 +201,7 @@ app.get('/../../assets/Photos/myphoto.png', (req, res) => {
     console.log(`Server got "/myphoto.png" request`);
 });
 
-app.get('/../../assets/Photos/logo.png', (req, res) => {
+app.get('/assets/Photos/logo.png', (req, res) => {
     res.sendFile(path.join(__dirname, '/assets/Photos/logo.png'));
     console.log(`Server got "/logo.png" request`);
 });
