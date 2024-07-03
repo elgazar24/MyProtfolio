@@ -1,4 +1,4 @@
-# Mohamed Elgazar's Portfolio
+# My Portfolio 🚀🚀
 
 Welcome to my personal portfolio website! This repository contains the source code for my portfolio website, showcasing my projects, skills, and experience in the field of embedded software engineering , Flutter development and Fullstack .
 
@@ -8,11 +8,11 @@ Welcome to my personal portfolio website! This repository contains the source co
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 
-## About
+## About 😄
 
 This is my personal portfolio website where I display my projects, skills, and experiences. It serves as a platform to share my work and connect with potential employers or collaborators.
 
-## Features
+## Features ⭐⭐
 
 - Responsive design
 - Navigation bar for easy access to different sections
@@ -21,7 +21,7 @@ This is my personal portfolio website where I display my projects, skills, and e
 - Contact form to get in touch with me
 - Downloadable CVs for different specializations
 
-## Technologies Used
+## Technologies Used ✨✨
 
 - HTML
 - CSS
